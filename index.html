@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Un detalle especial</title>
+    <style>
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background: linear-gradient(135deg, #4B0082, #8A2BE2);
+            color: white;
+            font-family: 'Poppins', sans-serif;
+            text-align: center;
+            overflow: hidden;
+            position: relative;
+        }
+        .background {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            top: 0;
+            left: 0;
+            overflow: hidden;
+            z-index: -1;
+        }
+        .sphere {
+            position: absolute;
+            width: 100px;
+            height: 100px;
+            background: radial-gradient(circle, rgba(255,0,255,0.7) 10%, transparent 70%);
+            border-radius: 50%;
+            animation: moveSpheres 10s infinite alternate ease-in-out;
+        }
+        .sphere:nth-child(1) { top: 10%; left: 10%; animation-duration: 12s; }
+        .sphere:nth-child(2) { top: 20%; left: 70%; animation-duration: 15s; }
+        .sphere:nth-child(3) { top: 60%; left: 30%; animation-duration: 18s; }
+        .sphere:nth-child(4) { top: 80%; left: 80%; animation-duration: 20s; }
+        .sphere:nth-child(5) { top: 40%; left: 50%; animation-duration: 25s; }
+        
+        @keyframes moveSpheres {
+            from { transform: translateY(0px) translateX(0px); opacity: 0.7; }
+            to { transform: translateY(-50px) translateX(50px); opacity: 0.4; }
+        }
+        .container {
+            background: rgba(255, 255, 255, 0.1);
+            padding: 30px;
+            border-radius: 20px;
+            box-shadow: 0 0 20px rgba(255, 255, 255, 0.3);
+            backdrop-filter: blur(10px);
+            animation: fadeIn 1.5s ease-in-out, pulse 3s infinite alternate;
+        }
+        img {
+            width: 200px;
+            height: 200px;
+            border-radius: 50%;
+            box-shadow: 0 0 15px rgba(255, 255, 255, 0.7);
+            transition: transform 0.5s ease-in-out;
+            animation: float 4s infinite alternate, rotateImage 6s infinite linear;
+        }
+        img:hover {
+            transform: scale(1.2) rotate(5deg);
+        }
+        h1 {
+            margin-top: 15px;
+            font-size: 28px;
+            font-weight: bold;
+            background: linear-gradient(90deg, #ff00ff, #ffffff);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            animation: slideIn 1.5s ease-in-out, glowText 2s infinite alternate;
+        }
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(-30px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        @keyframes slideIn {
+            from { opacity: 0; transform: translateX(-50px); }
+            to { opacity: 1; transform: translateX(0); }
+        }
+        @keyframes float {
+            from { transform: translateY(0px); }
+            to { transform: translateY(-10px); }
+        }
+        @keyframes glowText {
+            from { text-shadow: 0 0 5px #ff00ff; }
+            to { text-shadow: 0 0 15px #ffffff; }
+        }
+        @keyframes pulse {
+            from { transform: scale(1); }
+            to { transform: scale(1.05); }
+        }
+        @keyframes rotateImage {
+            from { transform: rotate(0deg); }
+            to { transform: rotate(360deg); }
+        }
+    </style>
+</head>
+<body>
+    <div class="background">
+        <div class="sphere"></div>
+        <div class="sphere"></div>
+        <div class="sphere"></div>
+        <div class="sphere"></div>
+        <div class="sphere"></div>
+    </div>
+    <div class="container">
+        <img src="SPOILER_FB_IMG_1699999003579.png" alt="Foto de tu amiga">
+        <h1>El mundo es más brillante porque tú estás en él ✨💜</h1>
+    </div>
+</body>
+</html>
